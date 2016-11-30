@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="can" width="500" height="300" style="border: 1px solid #FF0000"></canvas>
+	</body>
+	<script type="text/javascript">
+		var can = document.getElementById("can");
+		var ctx = can.getContext("2d");
+		ctx.rotate(5*Math.PI/180);
+		ctx.strokeRect(5,5,25,15);
+		ctx.scale(2,2)
+		ctx.strokeRect(5,5,25,15);
+		ctx.scale(2,2);
+		ctx.strokeRect(5,5,25,15);
+		ctx.scale(2,2);
+		ctx.strokeRect(5,5,25,15);
+		ctx.scale(1.5,1.5);
+		ctx.strokeRect(5,5,25,15);
+
+	</script>
+</html>

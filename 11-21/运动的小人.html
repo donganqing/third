@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.7.2.min.js" type="application/javascript"></script>
+		<style>
+			body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,select,textarea,button,th,td,blockquote,address,pre{margin:0;padding:0;}
+			h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;}
+			ul,dl,ol{list-style:none;}
+			img,fieldset{border:none;}
+			img{display:inline-block;overflow:hidden;vertical-align:top;}
+			em,address{font-style:normal;}
+			sup,sub{vertical-align:baseline;}
+			table{border-collapse:collapse;border-spacing:0;}
+			q:before{content:"";}
+			q:after{content:"";}
+			button{cursor:pointer;}
+			textarea{word-wrap:break-word;resize:none;}
+			a{
+				text-decoration: none;
+				color: #000;
+			}
+			.charector-wrap{
+				position: relative;
+				width: 180px;
+				height: 300px;;
+				left: 50%;
+				top: 50%;
+				margin-left: -90px;
+			}
+			a,button{
+				display: block;
+				float: left;
+				text-align: center;
+				padding: 5px;
+				margin-bottom: 5px;
+				margin-left: 50px;
+				width: 50px;
+				border: 1px solid #ccc;
+			}
+			button{
+				color: red;
+			}
+			.charector{
+				position: absolute;
+				width: 180px;
+				height: 300px;
+				background: url(img/charector.png) 0 0 no-repeat;
+				-webkit-animation-iteration-count:infinite;
+				-webkit-animation-timing-function: step-end;
+				
+			}
+			@-webkit-keyframes person-xfast{/*--超快--*/
+				0% {background-position: 0 0;}
+				14.3% {background-position: -180px 0;}
+				28.6% {background-position: -360px 0;}
+				42.9% {background-position: -540px 0;}
+				57.2% {background-position: -720px 0;}
+				71.5% {background-position: -900px 0;}
+				85.8% {background-position: -1080px 0;}
+				100% {background-position: 0 0;}	
+			}
+			@-webkit-keyframes person-fast{/*--快--*/
+				0% {background-position: 0 0;}
+				14.3% {background-position: -180px 0;}
+				28.6% {background-position: -360px 0;}
+				42.9% {background-position: -540px 0;}
+				57.2% {background-position: -720px 0;}
+				71.5% {background-position: -900px 0;}
+				85.8% {background-position: -1080px 0;}
+				100% {background-position: 0 0;}	
+			}
+			@-webkit-keyframes person-normal{/*--正常--*/
+				0% {background-position: 0 0;}
+				14.3% {background-position: -180px 0;}
+				28.6% {background-position: -360px 0;}
+				42.9% {background-position: -540px 0;}
+				57.2% {background-position: -720px 0;}
+				71.5% {background-position: -900px 0;}
+				85.8% {background-position: -1080px 0;}
+				100% {background-position: 0 0;}	
+			}
+			@-webkit-keyframes person-slow{/*--慢--*/
+				0% {background-position: 0 0;}
+				14.3% {background-position: -180px 0;}
+				28.6% {background-position: -360px 0;}
+				42.9% {background-position: -540px 0;}
+				57.2% {background-position: -720px 0;}
+				71.5% {background-position: -900px 0;}
+				85.8% {background-position: -1080px 0;}
+				100% {background-position: 0 0;}	
+			}
+			/*---------跑步频率控制--(时间间隔越长 运动的越慢)----*/
+			.xfast .charector{/*---超快---*/
+				-webkit-animation-name: person-xfast;
+				-webkit-animation-duration: 500ms;
+			}
+			.fast .charector{/*---快---*/
+				-webkit-animation-name: person-fast;
+				-webkit-animation-duration: 650ms;
+			}
+			.normal .charector{/*---正常---*/
+				-webkit-animation-name: person-normal;
+				-webkit-animation-duration: 800ms;
+			}
+			.slow .charector{/*---慢---*/
+				-webkit-animation-name: person-slow;
+				-webkit-animation-duration: 950ms;
+			}
+			/*--暂停动画--*/
+			.paused .charector{
+				-webkit-animation-play-state: paused;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="charector-wrap" id="js_wrap">
+			<div class="charector"></div>
+		</div>
+		<a class="run-xfast" href="#none">最快</a>
+<a class="run-fast" href="#none">快</a>
+<a class="run-normal" href="#none">正常</a>
+<a class="run-slow" href="#none">慢</a>
+<button class="btn-paused">暂停</button>
+	</body>
+	<script>
+	$(document).ready(function(){	
+		$("a").on("click",function(e){
+			$("#js_wrap").removeClass("paused");
+			$("#js_wrap").attr("class","charector-wrap " + $(e.target).attr("class").split("-")[1])
+		})
+		$(".btn-paused").click(function(){
+			$("#js_wrap").addClass("paused");
+		})
+	})
+
+		
+	</script>
+</html>

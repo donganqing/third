@@ -1,0 +1,180 @@
+/*------这里可以写所有项目网页的公共样式   或者定义的全局变量   然后通过@import "文件名" 把文件引入到 各自的less文件中  -------*/
+.addClass {
+  margin: 0 auto;
+}
+.a {
+  background: #aa6daa;
+  width: 100px;
+  height: 200px;
+}
+.b {
+  background: #dda0dd;
+  width: 80px;
+  height: 150px;
+  margin-top: 10px;
+}
+.c {
+  border: 3px solid #aa6daa;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+}
+.d {
+  color: #aa6daa;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.e {
+  width: 200px;
+  height: 200px;
+  background: #dda0dd;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.f {
+  width: 100px;
+  height: 100px;
+  background: #dda0dd;
+  margin-top: 10px;
+}
+.g {
+  width: 100px;
+  height: 100px;
+  background: #dda0dd;
+  margin-top: 10px;
+  /*继承上面.f 中的样式*/
+  background: #aa6daa;
+}
+/* 嵌套样式 */
+.wrap {
+  margin: 0 auto;
+  width: 200px;
+  background: #dda0dd;
+  margin-bottom: 20px;
+}
+@media (min-width: 400px) {
+  .wrap {
+    width: 200px;
+  }
+}
+.wrap .li {
+  color: red;
+}
+.wrap .li .link {
+  display: inline-block;
+  padding: 2px 5px;
+  background: paleturquoise;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.wrap .li .link:hover {
+  /*&代表当前的类的名字   即.link*/
+  transform: scale(2);
+}
+/*
+ .wrap{
+    margin: 0 auto;
+    width: 2*@width;
+    background: @color;
+    margin-bottom: 20px;;
+    .li{
+        color: red;
+        
+    }
+    .link{
+            display: inline-block;
+            padding: 2px 5px;
+            background: darkred;
+            margin-top: 5px;
+        }
+}
+ */
+/*
+ <div class="wrap-img">
+     <div class="wrap-img-image">
+         <p class="wrap-img-image-p"></p>
+     </div>
+ </div>
+ */
+.wrap-img {
+  width: 500px;
+  height: 100px;
+  background: #dda0dd;
+}
+.wrap-img-image {
+  color: #aa6daa;
+  text-align: center;
+}
+.wrap-img-image-p {
+  color: red;
+  height: 50px;
+  width: 200px;
+  background: #eeb1ee;
+  margin: 20px auto;
+  text-align: center;
+  font-weight: bolder;
+  line-height: 50px;
+}
+.wrap-img-image-p:hover {
+  transform: skew(45deg);
+}
+/*------循环指令------*/
+div {
+  width: 10px;
+  width: 20px;
+  width: 30px;
+  width: 40px;
+  width: 50px;
+}
+a:nth-of-type(1) {
+  color: #AA6DAA;
+  background: url("img/1.jpg");
+}
+a:nth-of-type(2) {
+  color: #AA6DAA;
+  background: url("img/2.jpg");
+}
+a:nth-of-type(3) {
+  color: #AA6DAA;
+  background: url("img/3.jpg");
+}
+a:nth-of-type(4) {
+  color: #AA6DAA;
+  background: url("img/4.jpg");
+}
+a:nth-of-type(5) {
+  color: #AA6DAA;
+  background: url("img/5.jpg");
+}
+span:nth-of-type(4) {
+  width: 100px;
+  height: 100px;
+  background: #aa6daa;
+}
+span:nth-of-type(3) {
+  width: 100px;
+  height: 100px;
+  background: #aa6daa;
+}
+span:nth-of-type(2) {
+  width: 100px;
+  height: 100px;
+  background: #aa6daa;
+}
+span:nth-of-type(1) {
+  width: 100px;
+  height: 100px;
+  background: #aa6daa;
+}
+.A,
+.B {
+  background: red;
+}
+.B {
+  width: 100px;
+}
+.p {
+  -webkit-animation: shi 2s;
+  -moz-animation: shi 2s;
+  -o-animation: shi 2s;
+}

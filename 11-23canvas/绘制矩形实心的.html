@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#dome{
+				border: 1px solid red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<canvas id="dome" width="500" height="500"></canvas>
+	</body>
+	<script type="application/javascript">
+		//1.得到canvas对象
+		var cxt = document.getElementById("dome");
+		//2.获取上下文
+		var context = cxt.getContext("2d");
+		//3.指定绘制样式，颜色
+		context.fillStyle = "chartreuse";
+		//4. 绘制矩形 实心的（填充）
+		context.fillRect(0,0,200,150)
+		
+		
+	</script>
+</html>

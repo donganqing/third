@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				border-radius: 50px;
+				background: mediumaquamarine;
+				position: relative;
+				margin: 200px;
+				box-shadow: 5px 5px 50px chartreuse inset;
+				animation: myfirst 5s linear 1s infinite alternate running;
+			}
+			@keyframes myfirst{
+				0%{
+					background: mediumaquamarine;
+					left: 0px;
+					top: 0px;
+				}
+				25%{
+					background: aquamarine;
+					left: 300px;
+					top: -100px;
+				}
+				50%{
+					background: darkviolet;
+					left: 600px;
+					top: 0px;
+				}
+				75%{
+					background: orangered;
+					left: 300px;
+					top: 100px;
+				}
+				100%{
+					background: mediumaquamarine;
+					left: 0px;
+					top: 0px;
+				}
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

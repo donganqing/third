@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/lamp.gif" id="lamp">
+		<p>canvas:</p>
+		<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+	</body>
+	<script type="text/javascript">
+		var can = document.getElementById("myCanvas");
+		var txt = can.getContext("2d");
+		txt.clearRect(0,0,can.width,can.height); 
+		var img = document.getElementById("lamp");
+		var pat = txt.createPattern(img,"repeat");
+		txt.rect(0,0,150,100);
+		txt.fillStyle = pat;
+		txt.fill();
+		
+	</script>
+</html>

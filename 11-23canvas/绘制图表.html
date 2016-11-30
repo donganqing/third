@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图表绘制</title>
+	</head>
+	<body>
+		<canvas id="demo" width="600" height="500" style="border: 1px solid #FF0000"></canvas>
+	</body>
+	<script>
+		var canvasDom = document.getElementById("demo");
+		var context = canvasDom.getContext("2d");
+		//3.开始绘制
+		//绘制坐标x y轴
+		context.moveTo(50,60);
+		context.lineTo(50,450);
+		context.lineTo(500,450)
+		context.stroke();
+		//y轴范围 60 - 450；
+		//x轴范围 50 - 500；
+		//原点坐标（ 50， 450 ；）
+		
+		//绘制y轴刻度
+		context.beginPath();
+		context.font = "16px Arail"
+		context.moveTo(50,450);
+		context.moveTo(50, 400);
+		context.lineTo(40, 400);
+		context.fillText(50,20,405 )//让字体的y坐标增加5
+		
+		context.moveTo(50,400);
+		context.moveTo(50,350);
+		context.lineTo(40,350);
+		context.fillText(100,10,355);//
+		
+		context.moveTo(50,350);
+		context.moveTo(50,300);
+		context.lineTo(40,300);
+		context.fillText(150,10,305);//
+		
+		context.moveTo(50,300);
+		context.moveTo(50,250);
+		context.lineTo(40,250);
+		context.fillText(200,10,255);//
+		
+		context.moveTo(50,250);
+		context.moveTo(50,200);
+		context.lineTo(40,200);
+		context.fillText(250,10,205);//
+		
+		context.moveTo(50,200);
+		context.moveTo(50,150);
+		context.lineTo(40,150);
+		context.fillText(300,10,155);//
+		
+		context.moveTo(50,150);
+		context.moveTo(50,100);
+		context.lineTo(40,100);
+		context.fillText(350,10,100);//
+		context.closePath();
+		context.stroke();
+		/*//绘制X轴
+		
+		context.beginPath();
+		context.font = "16px Arail";
+		context.moveTo(50,450);
+		context.moveTo(100,450);
+		context.lineTo(100,460);
+		context.fillText(50,90,480);//把字往左便宜10px
+		
+		context.moveTo(150,450);
+		context.lineTo(150,460);
+		context.fillText(100,140,480);//
+		
+		context.moveTo(200,450);
+		context.lineTo(200,460);
+		context.fillText(150,190,480);//
+		
+		context.moveTo(250,450);
+		context.lineTo(250,460);
+		context.fillText(250,240,480);//
+		
+		context.moveTo(300,450);
+		context.lineTo(300,460);
+		context.fillText(300,290,480);//
+		
+		context.moveTo(350,450);
+		context.lineTo(350,460);
+		context.fillText(350,340,480);//
+		
+		context.moveTo(400,450);
+		context.lineTo(400,460);
+		context.fillText(400,390,480);//
+		
+		context.moveTo(450,450);
+		context.lineTo(450,460);
+		context.fillText(450,440,480);//
+		context.closePath();
+		context.stroke();
+		*/
+		//绘制箭头
+		context.beginPath();
+		context.font = "16px Arail";
+		context.lineWidth = 2;
+		//x轴箭头
+		context.moveTo(500,450);
+		context.lineTo(490,440);
+		context.moveTo(500,450);
+		context.lineTo(490,460);
+		//y轴箭头
+		context.moveTo(50,60);
+		context.lineTo(40,70);
+		context.moveTo(50,60);
+		context.lineTo(60,70);
+		context.closePath();
+		context.stroke();
+		
+		//添加x y
+		context.beginPath();
+		context.font = "20px Arail";
+		context.moveTo(500,440);
+		context.fillText("x",490,475);
+		context.font = "12px Arail";
+		context.fillText( "水果名称", 460, 435 );
+		context.beginPath();
+		//y
+		context.beginPath();
+		context.font = "20px Arail";
+		context.moveTo(30,70);
+		context.fillText("y",30,70);
+		context.font = "12px Arail";
+		context.fillText("销量/(万箱)",70,70);
+		context.beginPath();
+		
+		//绘制图表内容
+		
+		
+		//图表标题
+		context.font="30px Verdana";
+		// 创建渐变
+		var gradient=context.createLinearGradient(0,0,canvasDom.width,0);
+			gradient.addColorStop("0","magenta");
+			gradient.addColorStop(".3","blue");
+			gradient.addColorStop(".7","red");
+		// 用渐变填色
+		context.fillStyle=gradient;
+		context.fillText("水果销量信息!",200,40);
+		context.closePath();
+		
+		//画矩形
+		//y轴60-450
+		//x轴 50-500；
+		//原点坐标50 450；
+		//竖状图width=50；
+		//竖状图距离左边40；
+		context.beginPath();
+		context.font="16px Verdana";
+		/*context.fillStyle = "mediumpurple";
+		
+		context.fillRect(90,260,50,190);
+		context.fillText("苹果",100,470);
+		
+		context.fillRect(180,150,50,300);
+		context.fillText("橘子",190,470);*/
+		
+		var fruits = [ "苹果", "橘子", "香蕉", "柠檬" ];
+		var sums = [ 190, 300, 200, 180 ];
+		context.fillStyle = "aquamarine";
+		var color = [ "mediumpurple", "chartreuse", "lightcoral", "aquamarine" ]
+		for( var i = 0; i < fruits.length; i++ ){
+			context.fillStyle = color[i];
+			context.fillRect( 90 * ( i + 1 ), 450 - sums[i], 50, sums[i] );
+			context.fillText( fruits[i], 90 * i + 100, 470 );
+		}
+		//添加折线  
+		context.moveTo( 115, 250 );
+		context.lineTo( 205, 140 );
+		context.lineTo( 295, 240 );
+		context.lineTo( 385, 260 );
+		context.stroke();
+		
+		//添加圆点
+		context.beginPath();
+		context.fillStyle = "orange";
+		/*context.arc( 115, 250, 10, 0, 2*Math.PI );
+		context.closePath();
+		context.arc( 205, 140, 10, 0, 2*Math.PI );
+		context.closePath();
+		context.arc( 295, 240, 10, 0, 2*Math.PI );
+		context.closePath();
+		context.arc( 385, 260, 10, 0, 2*Math.PI );
+		context.closePath();*/
+		//for 循环代替
+		for( var i = 0; i < fruits.length; i++ ){
+			context.arc( 90 * ( i + 1 ) + 25, 440 - sums[i], 10, 0, 2*Math.PI );
+			context.closePath();
+		}
+		context.fill();
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</html>

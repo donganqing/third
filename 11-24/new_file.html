@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0}
+			#wrap{
+				height: 342px;
+				width:413px;
+				margin:0 auto;
+			}
+			/*画布无法实现margin:0 auto;*/
+			#windcar{
+				background-color: #000000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<canvas id="windcar" height="342" width="413"></canvas>
+		</div>
+		<script>
+			var windCar=document.getElementById("windcar");
+			var context=windCar.getContext("2d");
+			context.beginPath();
+			context.fillStyle="#9a0100";
+			/*context.moveTo(183,168);*/
+			context.arc(137,133,60,0.25*Math.PI,1.25*Math.PI);
+			context.closePath();
+			/*context.arc(257,133,60,1.25*Math.PI,2.25*Math.PI);
+			context.closePath();
+			context.arc(197,77,60,0.75*Math.PI,1.75*Math.PI);
+			context.closePath();
+			context.arc(197,193,60,1.75*Math.PI,0.75*Math.PI);
+			context.closePath();*/
+
+			context.fill()
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			* {
+				margin: 0;
+				padding: 0; 
+				border-width: 0;
+			}
+			html,body {
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			
+			.page:nth-of-type(2) {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				background: -webkit-linear-gradient(top,#ffffff,blueviolet);
+			}
+						/*---------2--------*/
+			.page:nth-of-type(2) .img1{
+				position: absolute;
+				left: 80%;
+				transform-origin: center top;
+				animation: glim 2s linear infinite alternate running ;
+			}
+			@keyframes glim{
+				from{
+					transform: rotate(-25deg);
+				}
+				to{
+					transform: rotate(25deg);
+				}
+				
+			}
+			/*-----------*/
+			.page:nth-of-type(2) .img2{
+				position: absolute;
+				z-index: 15;
+			}
+			.page:nth-of-type(2) .img3{
+				position: absolute;
+				z-index: 20;
+				left: -2%;
+				width: 50%;
+				height: 70%;
+				top: 40%;
+			}
+			.page:nth-of-type(2) .img4{
+				position: absolute;
+				top:52%;
+				left: 5%;
+				animation: dance linear 8s infinite normal running;
+			}
+			
+			@keyframes dance{
+				0%{
+					transform: translate( 0px, 0px );
+				}
+				25%{
+					transform: translate( 150px, -50px );
+				}
+				50%{
+					transform: translate( 300px, 0px );
+				}
+				75%{
+					transform: translate( 150px, 50px);
+				}
+				100%{
+					transform: translate( 0px, 0px );
+				}
+			}
+			
+			.page:nth-of-type(2) .img5{
+				position: absolute;
+				right: 0%;
+				bottom: -3%;
+				animation: flower1 2s linear infinite alternate running;
+			}
+			@-webkit-keyframes flower1{
+				from{ transform: rotate(10deg); }
+				to{ transform: rotate(-10deg); }
+			}
+			
+			.page:nth-of-type(2) .img6{
+				position: absolute;
+				right: 10%;
+				bottom: 15%;
+				animation: hudie 6s linear infinite normal running;
+			}
+			@-webkit-keyframes hudie{
+				0%{
+					transform: translate( 0px, 0px );
+				}
+				25%{
+					transform: translate( 50px, -50px );
+				}
+				50%{
+					transform: translate( 100px, 0px );
+				}
+				75%{
+					transform: translate( 50px, 50px);
+				}
+				100%{
+					transform: translate( 0px, 0px );
+				}
+				
+			}
+			
+			.page:nth-of-type(2) .img7{
+				position: absolute;
+				left: 25%;
+				bottom: 60%;
+				opacity: .5;
+				transform-origin: center bottom;
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			.page:nth-of-type(2) .img8{
+				position: absolute;
+				left: 50%;
+				bottom: 65%;
+				opacity: .5;
+				transform: scale(.8);
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			.page:nth-of-type(2) .img9{
+				position: absolute;
+				left: 75%;
+				bottom: 60%;
+				opacity: .5;
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			@-webkit-keyframes tree1{
+				from{ transform: rotate(-5deg) ; }
+				to{ transform: rotate(5deg); }
+			}
+			
+			.page:nth-of-type(2) .img10{
+				position: absolute;
+				left: 30%;
+				bottom: -30%;
+				opacity: .5;
+				animation: letter 5s linear infinite alternate running;
+			}
+			@-webkit-keyframes letter{
+				from{transform: scale(.8);}
+				to{ transform: scale(.3);}
+			}
+			/*------------*/
+		</style>
+	</head>
+	<body>
+			<section class="page"></section>
+			<section class="page">
+				<img class="img1" src="img/4.png" />
+				<img class="img2" src="img/21.png" />
+				<img src="img/15.gif" class="img3"/>
+				<img class="img4" src="img/31.png" />
+				<img class="img5" src="img/32.png" />
+				<img class="img6" src="img/33.gif" />
+				<img class="img7" src="img/34.png" />
+				<img class="img8" src="img/34.png" />
+				<img class="img9" src="img/34.png" />
+				<img class="img10" src="img/42.png" />
+			</section>
+	</body>
+</html>

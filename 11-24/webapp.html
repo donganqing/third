@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>webapp CSS3应用</title>
+		<link href="css/new_file.css" type="text/css" rel="stylesheet">
+		<style>
+		
+			* {
+				margin: 0;
+				padding: 0; 
+				border-width: 0;
+			}
+			html,body {
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.wrap {
+				width: 100%;
+				height: 100%;
+				transition: all .5s ease;
+				/*display: flex;
+				flex-direction: column;*/
+				/*transform: translateY(-100%);*/
+			}
+			
+			.page {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.page:nth-of-type(1) {
+				background: -webkit-linear-gradient(bottom,#ffffff,red);
+			}
+			.page:nth-of-type(2) {
+				position: relative;
+				background: -webkit-linear-gradient(top,#ffffff,blueviolet);
+			}
+			.page:nth-of-type(3) {
+				position: relative;
+				overflow: hidden;
+				background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(rgba(0, 100, 255, 0.5)));
+			}
+			.page:nth-of-type(4) {
+				position: relative;
+				background:  -webkit-gradient(linear, 0 0,100% 100%,color-stop(.1,palegoldenrod),color-stop(.5,powderblue),color-stop(1,palevioletred));  
+			}
+			.page:nth-of-type(5) {
+				position: relative;
+				background: -webkit-linear-gradient(top,cornflowerblue,cyan);
+				/*background:  -webkit-gradient(linear, 0 top,0 top,color-stop(.1,paleturquoise),color-stop(.5,cyan),color-stop(1,cornflowerblue));  */
+			}
+			/*-------1--------*/
+			.page:nth-of-type(1) .img1{
+				width: 15%;
+				height: 35%;
+				margin:10% 80%;
+				animation: myfirst 2s linear 1s infinite alternate running;
+			}
+			@-webkit-keyframes myfirst{
+				0%{
+					margin-top: 100px;
+				}
+				25%{
+					margin-top: 150px;
+				}
+				50%{
+					margin-top: 200px;
+				}
+				75%{
+					margin-top: 150px;
+				}
+				100%{
+					margin-top: 100px;
+				}
+			}
+			.page:nth-of-type(1) .img2{
+				position: relative;
+				width: 50%;
+				height: 30%;
+				top: -70%;
+			}
+			.page:nth-of-type(1) .img3{
+				position: absolute;
+				bottom: 20%;
+				left: 45%;
+				animation: name 2s linear infinite alternate running;
+			}
+			@-webkit-keyframes name{
+				from{
+					transform: scale(1);
+				}
+				to{
+					transform: scale(2);
+					
+				}
+			}
+			/*---------2--------*/
+			.page:nth-of-type(2) .img1{
+				position: absolute;
+				left: 80%;
+				transform-origin: center top;
+				animation: glim 2s linear infinite alternate running ;
+			}
+			@-webkit-keyframes glim{
+				from{
+					transform: rotate(-25deg);
+				}
+				to{
+					transform: rotate(25deg);
+				}
+				
+			}
+			.page:nth-of-type(2) .img2{
+				position: absolute;
+				z-index: 15;
+			}
+			.page:nth-of-type(2) .img3{
+				position: absolute;
+				z-index: 20;
+				left: -2%;
+				width: 50%;
+				height: 70%;
+				top: 40%;
+			}
+			.page:nth-of-type(2) .img4{
+				position: absolute;
+				top:52%;
+				left: 5%;
+				animation: dance linear 8s infinite normal running;
+			}
+			
+			@-webkit-keyframes dance{
+				0%{
+					transform: translate( 0px, 0px );
+				}
+				25%{
+					transform: translate( 150px, -50px );
+				}
+				50%{
+					transform: translate( 300px, 0px );
+				}
+				75%{
+					transform: translate( 150px, 50px);
+				}
+				100%{
+					transform: translate( 0px, 0px );
+				}
+			}
+			
+			.page:nth-of-type(2) .img5{
+				position: absolute;
+				right: 0%;
+				bottom: -3%;
+				animation: flower1 2s linear infinite alternate running;
+			}
+			@-webkit-keyframes flower1{
+				from{ transform: rotate(10deg); }
+				to{ transform: rotate(-10deg); }
+			}
+			
+			.page:nth-of-type(2) .img6{
+				position: absolute;
+				right: 10%;
+				bottom: 15%;
+				animation: hudie 6s linear infinite normal running;
+			}
+			@-webkit-keyframes hudie{
+				0%{
+					transform: translate( 0px, 0px );
+				}
+				25%{
+					transform: translate( 50px, -50px );
+				}
+				50%{
+					transform: translate( 100px, 0px );
+				}
+				75%{
+					transform: translate( 50px, 50px);
+				}
+				100%{
+					transform: translate( 0px, 0px );
+				}
+				
+			}
+			.page:nth-of-type(2) .img7{
+				position: absolute;
+				left: 25%;
+				bottom: 60%;
+				opacity: .5;
+				transform-origin: center bottom;
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			.page:nth-of-type(2) .img8{
+				position: absolute;
+				left: 50%;
+				bottom: 65%;
+				opacity: .5;
+				transform: scale(.8);
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			.page:nth-of-type(2) .img9{
+				position: absolute;
+				left: 75%;
+				bottom: 60%;
+				opacity: .5;
+				animation: tree1 2s linear infinite alternate running; 
+			}
+			@-webkit-keyframes tree1{
+				from{ transform: rotate(-5deg) ; }
+				to{ transform: rotate(5deg); }
+			}
+			
+			.page:nth-of-type(2) .img10{
+				position: absolute;
+				left: 30%;
+				bottom: -30%;
+				opacity: .5;
+				animation: letter 5s linear infinite alternate running;
+			}
+			@-webkit-keyframes letter{
+				from{transform: scale(.8);}
+				to{ transform: scale(.3);}
+			}
+			/*------3-------*/
+			
+			.page:nth-of-type(3) .img1{
+				position: absolute;
+				right: 3%;
+				top: 6%;
+				transform: scale(1.5);
+			}
+			
+			.page:nth-of-type(3) .img2{
+				position: absolute;
+				z-index: 20;
+				left: 0%;
+				bottom: -8%;
+				transform-origin: center bottom;
+				animation: grass 2s linear infinite alternate running;
+			}
+			@-webkit-keyframes grass{
+				from{transform: rotate(0deg) scale(1.5);}
+				to{transform: rotate(20deg) scale(1.5);}
+			}
+			
+			.page:nth-of-type(3) .img3{
+				position: absolute;
+				left: 2%;
+				bottom: 20%;
+				animation: people 20s linear infinite normal running;
+			}
+			@-webkit-keyframes people{
+				from{transform: translateX(-100%);}
+				to{transform: translateX(600%);}
+			}
+			.page:nth-of-type(3) .img4{
+				position: absolute;
+				left: 2%;
+				bottom: 50%;
+				opacity: .4;
+			}
+			.page:nth-of-type(3) .img5{
+				position: absolute;
+				left: 25%;
+				bottom: 53%;
+				opacity: .4;
+			}
+			.page:nth-of-type(3) .img6{
+				position: absolute;
+				left: 51%;
+				bottom: 50%;
+				opacity: .4;
+			}
+			.page:nth-of-type(3) .img7{
+				position: absolute;
+				left: 80%;
+				bottom: 55%;
+				opacity: .4;
+			}
+			.page:nth-of-type(3) .img8{
+				position: absolute;
+				width: 10%;
+				height: 15%;
+				right: 0%;
+				top: 15%;
+				opacity: .5;
+				animation: cloud 30s linear infinite normal running;
+			}
+			@-webkit-keyframes cloud{
+				from{transform: translateX(100%);}
+				to{transform: translateX(-1000%);}
+			}
+			.page:nth-of-type(3) .img9{
+				position: absolute;
+				width: 10%;
+				right: 0%;
+				top: 1%;
+				opacity: .5;
+				animation: peri 30s linear infinite normal running;
+			}
+			@-webkit-keyframes peri{
+				from{transform: translateX(100%);}
+				to{transform: translateX(-1000%);}
+			}
+			.page:nth-of-type(3) .img10{
+				position: absolute;
+				left: 1%;
+				top: 1%;
+				width: 7%;
+				height: 10%;
+				opacity: .6;
+			}
+			/*-------其他样式-----*/
+			.wrap.show0{/*---------不能用空格，因为是同级别的，用空格就是wrap 下面的show了----------*/
+				transform: translateY(0%);
+			}
+			.wrap.show1{
+				transform: translateY(-100%);
+			}
+			.wrap.show2{
+				transform: translateY(-200%);
+			}
+			.wrap.show3{
+				transform: translateY(-300%);
+			}
+			.wrap.show4{
+				transform: translateY(-400%);
+			}
+			.nav, .dot-tips{
+				position: fixed;
+				right: 20px;
+				top: 50%;
+				margin-top: -75px;
+				width: 20px;
+			}
+			.dot {
+				display: block;
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				text-align: center;
+				line-height: 40px;
+				color: #ffffff;
+				font-weight: 600;
+				font-size: 20px;
+				cursor: pointer;
+				margin-top: 10px;
+				background-color: rgba(0,0,0,.3);
+				transform: all .5s ease;
+			}
+			.dot:hover{
+				background: #000;
+			}
+			.dot.hot{
+				background-color: #000000;
+			}
+			.dot-tips{
+				/*width: 250px;*/
+				right: 291px;
+			}
+			.dot-wrap{
+				width: 250px;
+				height: 40px;
+				line-height: 40px;
+				text-align: right;
+				margin-top: 10px;
+
+			}
+			.dot-tip{
+				position: relative;
+				background: rgba( 0,0,0,.3);
+				color: #FFFFFF;
+				padding: 5px 10px;
+				border-radius: 5px;
+				transform: all 1s linear;
+				opacity: 0;
+
+			}
+			.dot-tip:after {
+				position: absolute;
+				right: -6px;
+				top: 7px;
+				content: " ";
+				width: 0;
+				height: 0;
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 6px solid #000000;
+				opacity: .3;
+				
+			}
+			.dot-tip.tip{
+				opacity: .5;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<audio src="1.mp3" autoplay="autoplay"></audio>
+		<div class="wrap show0">
+			<section class="page">
+				<img class="img1" src="img/1.png"/>
+				<img class="img2" src="img/2.png">
+				<img class="img3" src="img/3.png" />
+			</section>
+			<section class="page">
+				<img class="img1" src="img/4.png" />
+				<img class="img2" src="img/21.png" />
+				<img src="img/15.gif" class="img3"/>
+				<img class="img4" src="img/31.png" />
+				<img class="img5" src="img/32.png" />
+				<img class="img6" src="img/33.gif" />
+				<img class="img7" src="img/34.png" />
+				<img class="img8" src="img/34.png" />
+				<img class="img9" src="img/34.png" />
+				<img class="img10" src="img/42.png" />
+			</section>
+			<section class="page">
+				<img class="img1" src="img/5 (2).png"/>
+				<img class="img2" src="img/01.png"/>
+				<img class="img3" src="img/5.png"/>
+				<img class="img4" src="img/03.png"/>
+				<img class="img5" src="img/03.png"/>
+				<img class="img6" src="img/03.png"/>
+				<img class="img7" src="img/03.png"/>
+				<img class="img8" src="img/05.png" />
+				<img class="img9" src="img/06.png" />
+				<img class="img10" src="img/09.png" />
+			</section>
+			<section class="page"></section>
+			<section class="page"></section>
+		</div>
+		<nav class="nav">
+			<a class="dot hot"><em class="iconfont">&#xe61c;</em></a>
+			<a class="dot"><em class="iconfont">&#xe657;</em></a>
+			<a class="dot"><em class="iconfont">&#xe63a;</em></a>
+			<a class="dot"><em class="iconfont">&#xe6ec;</em></a>
+			<a class="dot"><em class="iconfont">&#xe60f;</em></a>
+		</nav>
+		<nav class="dot-tips">
+			<div class="dot-wrap">
+				<mark class="dot-tip">此处为提示1</mark>
+			</div>
+			<div class="dot-wrap">
+				<mark class="dot-tip">此处为提示2</mark>
+			</div>
+			<div class="dot-wrap">
+				<mark class="dot-tip">此处为提示3</mark>
+			</div>
+			<div class="dot-wrap">
+				<mark class="dot-tip">此处为提示4</mark>
+			</div>
+			<div class="dot-wrap">
+				<mark class="dot-tip">此处为提示5</mark>
+			</div>
+		</nav>
+	</body>
+	<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script>
+		var page = {
+			init : function(){//初始化
+				this.$dots = $("a.dot");//获取所有的a标签	this指代page
+				this.$wrap = $("div.wrap");//获取div
+				this.$tips = $("mark.dot-tip");
+				this.render();
+			},
+			render : function(){//修饰
+				var that = this;
+				this.$dots.click(function(){
+					that.$dots.removeClass("hot");
+					$(this).addClass("hot");
+					that.$wrap.attr("class","wrap show"+$(this).index())
+				});
+				this.$dots.hover(function(){
+					that.$tips.eq( $(this).index() ).addClass("tip");
+				},function(){
+					that.$tips.removeClass("tip");
+				})
+			}
+		}
+		page.init();
+		
+	</script>
+</html>

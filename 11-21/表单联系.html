@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	html, body, h1, form, fieldset, legend, ol, li {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background: #ffffff;
+		color: #111111;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		padding: 20px;
+	}
+	h1{
+		font-size: 28px;
+		margin-top: 20px;
+	}
+	#payment{
+		width: 400px;
+		background: #9cbc2c;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		counter-reset: fieldsets;
+		padding: 20px;		
+	}
+	form#payment fieldset{
+		border: none;
+		margin-top: 10px;
+	}
+	form#payment fieldset:last-of-type{
+		margin-bottom: 0;
+	}
+	form#payment legend{
+		color: #384313;
+		font-size: 16px;
+		font-weight: bold;
+		padding-bottom: 10px;
+		text-shadow: 0 1px 1px #c0d576;
+	}
+	form#payment > fieldset > legend:before{
+		content: "Step" counter(fieldsets) ":";
+		counter-increment: fieldsets;
+	}
+	form#payment fieldset fieldset legend{
+		color: #111111;
+		font-size: 13px;
+		font-weight: normal;
+		padding-bottom: 0;
+	}
+	form#payment ol li{
+		background: #b9cf6a;
+		background: rgba(255,255,255,.3);
+		border-color: #e3ebc3;
+		border-color: rgba(255.255.255,.6);
+		border-width: 2px;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		line-height: 30px;
+		list-style: none;
+		padding: 5px 10px;
+		margin-top: 2px;
+	}
+	form#payment ol ol li{
+		background: none;
+		border: none;
+		float: left;
+	}
+	form#payment label{
+		float: left;
+		font-size: 13px;
+		width: 110px;
+	}
+	form#payment fieldset fieldset label {
+	background:none no-repeat left 50%;
+	line-height: 20px;
+	padding: 0 0 0 30px;
+	width: auto;
+	}
+	form#payment label[for=vise] {
+		background-image: url(img/01.jpg);
+	}
+	form#payment label[for=amex] {
+		background-image: url(amex.gif);
+	}
+	form#payment label[for=mastercard] {
+		background-image: url(mastercard.gif);
+	}
+	form#payment fieldset fieldset label:hover {
+		cursor: pointer;
+	}
+	form#payment input:not([type=radio]),
+	form#payment textarea {
+		background: #ffffff;
+		border: none;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-khtml-border-radius: 3px;
+		border-radius: 3px;
+		font: italic 13px Georgia, "Times New Roman", Times, serif;
+		outline: none;
+		padding: 5px;
+		width: 200px;
+	}			
+	
+	form#payment input:not([type=submit]):focus,
+	form#payment textarea:focus {
+		background: #eaeaea;
+	}
+	form#payment input[type=radio] {
+		float: left;
+		margin-right: 5px;
+	}
+	form#payment button {
+		background: #384313;
+		border: none;
+		-moz-border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-khtml-border-radius: 20px;
+		border-radius: 20px;
+		color: #ffffff;
+		display: block;
+		font: 18px Georgia, "Times New Roman", Times, serif;
+		letter-spacing: 1px;
+		margin: auto;
+		padding: 7px 25px;
+		text-shadow: 0 1px 1px #000000;
+		text-transform: uppercase;
+	}
+	form#payment button:hover {
+		background: #1e2506;
+		cursor: pointer;
+		}
+	</style>
+	<body>
+		<h1>Payment form</h1>
+		<form id="payment">
+			<fieldset>
+				<legend>你的详细信息</legend>
+				<ol>
+					<li>
+						<label for=name>姓名</label>
+						<input type="text" name="name" id="name" value="" placeholder="请输入你的姓名" required autofocus=""/>
+					</li>
+					<li>
+						<label for=email>Email</label>
+						<input type="email" name="email" id="email" value="" placeholder="请输入您的邮箱"/>
+					</li>
+					<li>
+						<label for=phone>电话</label>
+						<input type="tel" name="phone" id="phone" value="" placeholder="请输入您的电话" />
+					</li>
+				</ol>
+			
+			</fieldset>
+			<fieldset>
+				<legend>地址</legend>
+				<ol>
+					<li>
+						<label for=address>家庭住址</label>
+						<textarea id="address" name="address" rows="5" required></textarea>
+					</li>
+					<li>
+						<label for="pastcode">邮政编码</label>
+						<input type="text" name="postcode" id="postcode" value=""  required/>
+					</li>
+					<li>
+						<label for="country">国籍</label>
+						<input type="text" name="country" id="country" value="" required/>
+					</li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<legend>细节</legend>
+				<ol>
+					<li>
+						<fieldset>
+							<legend>类型</legend>
+							<ol>
+								<li>
+									<input id=visa name=cardtype type=radio>
+									<label for=visa>VISA</label>
+								</li>
+								<li>
+									<input id=amex name=cardtype type=radio>
+									<label for=amex>AmEx</label>
+								</li>
+								
+								<li>
+									<input id=mastercard name=cardtype type=radio>
+									<label for=mastercard>Mastercard</label>
+								</li>
+							</ol>
+						</fieldset>
+					</li>
+					<li>
+						<label for=cardnumber>电话号码</label>
+						<input id=cardnumber name=cardnumber type=number required>
+					</li>
+					
+					<li>
+						<label for=secure>密码</label>
+						<input id=secure name=secure type=number required>
+					</li>
+					
+					<li>
+						<label for=namecard>昵称</label>
+						<input id=namecard name=namecard type=text placeholder="请输入你的昵称" required>
+					</li>
+				</ol>
+			</fieldset>
+			<fieldset>
+					<button type="submit">买吧！亲</button>
+					
+			</fieldset>
+		</form>
+		
+		
+		
+	</body>
+</html>

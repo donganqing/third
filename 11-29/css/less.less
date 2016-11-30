@@ -1,0 +1,167 @@
+
+@import "out.less";//@import导入扩展名为.less的文件文件里可以使全局变量也可以是公共样式
+
+.a{
+    background: @colorb;
+    width: @width;
+    height: 2*@height;
+}
+
+.b{
+    background: @color;
+    width: 0.8*@width;
+    height: 1.5*@height;
+    margin-top: 10px;
+}
+
+.c{
+    border: 3px solid @colorb;
+    width: 2*@width;
+    height: 1.5*@height;
+    margin-top: 10px;
+}
+
+.d{
+    color: @colorb;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.e{
+    width: 2*@width;
+    height: 2*@height;
+    background: @color;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.f{
+    width: @width;
+    height: @height;
+    background: @color;
+    margin-top: 10px;
+}
+
+.g{
+    .f;/*继承上面.f 中的样式*/
+    background: @colorb;
+}
+/* 嵌套样式 */
+.wrap{
+    margin: 0 auto;
+    width: 2*@width;
+    background: @color;
+    margin-bottom: 20px;
+    @media(min-width: 400px){
+        width: 2*@width;
+    }
+    .li{
+        color: red;
+        .link{
+            display: inline-block;
+            padding: 2px 5px;
+            background: paleturquoise;
+            margin-top: 5px;
+            cursor: pointer;
+            &:hover{/*&代表当前的类的名字   即.link*/
+            transform: scale(2);
+            }
+        }
+    }
+}
+/*
+ .wrap{
+    margin: 0 auto;
+    width: 2*@width;
+    background: @color;
+    margin-bottom: 20px;;
+    .li{
+        color: red;
+        
+    }
+    .link{
+            display: inline-block;
+            padding: 2px 5px;
+            background: darkred;
+            margin-top: 5px;
+        }
+}
+ */
+/*
+ <div class="wrap-img">
+     <div class="wrap-img-image">
+         <p class="wrap-img-image-p"></p>
+     </div>
+ </div>
+ */
+.wrap-img{
+    width: 5*@width;
+    height: @height;
+    background: @color;
+    &-image{
+        color: @colorb;
+        text-align: center;
+        &-p{
+            color: red;
+            height: 0.5*@height;
+            width: 2*@width;
+            background: @color + #111;
+            margin: 20px auto;
+            text-align: center;
+            font-weight: bolder;
+            line-height: 0.5*@height;
+            &:hover{
+                transform: skew(45deg);
+            }
+        }
+    }
+}
+/*------循环指令------*/
+.lo(@counter) when (@counter > 0){
+    .lo((@counter - 1));
+    width: (10px * @counter);
+}
+
+div {
+    .lo(5);
+}
+
+
+.loop( @i ) when( @i > 0 ){
+    .loop( @i - 1);
+    a:nth-of-type(@{i}){
+        color: #AA6DAA;
+        background: url("img/@{i}.jpg");
+    }
+}
+.loop(5);
+
+
+.loo( @j ) when( @j>0 ){
+    span:nth-of-type(@{j}){
+        width: @width;
+        height: @height;
+        background: @colorb;
+    }
+    .loo( @j - 1 );
+}
+.loo(4);
+
+.A{
+    background: red;
+}
+
+.B{
+    &:extend( .A );
+    width: 100px;
+}
+
+.span(@name, @time){
+    -webkit-animation: @name @time;
+    -moz-animation: @name @time;
+    -o-animation: @name @time;
+    
+}
+.p{
+    .span( shi, 2s );
+}
